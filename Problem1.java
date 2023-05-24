@@ -23,16 +23,14 @@ public class Problem1 {
 
     public static void sort(ArrayList<Number> list) {
         for(int i = 0; i < list.size() - 1; i++){
-            int temp = i;
-            for(int j = 1; j < list.size(); j++){
-                double a = list.get(temp).doubleValue();
+            for(int j = i + 1; j < list.size(); j++){
+                double a = list.get(i).doubleValue();
                 double b = list.get(j).doubleValue();
-                if(a >= b){
-                    temp = j;
+                Number t = list.get(i);
+                if(a > b){
+                list.set(i, list.get(j));
+                list.set(j, t);
                 }
-                list.set(i, a);
-                list.set(temp, b);
-                
             }
     }
     }
